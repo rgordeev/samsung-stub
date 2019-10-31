@@ -1,6 +1,11 @@
 plugins {
     id 'java'
+    id 'application'
 }
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+version = '0.0.1'
 
 repositories {
     jcenter()
@@ -10,4 +15,13 @@ dependencies {
     testImplementation "junit:junit:4.12"
 }
 
+application {
+    mainClassName = 'ru.rgordeev.Launcher'
+}
+
+jar {
+    manifest {
+        attributes('Main-Class': 'ru.rgordeev.Launcher')
+    }
+}
 
